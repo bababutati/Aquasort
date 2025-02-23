@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Sort Puzzle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="stats">
+                <div class="coins">Coins: $<span id="coinBalance">80const CACHE_NAME = 'water-sort-puzzle-v1';
+                const urlsToCache = [
+                    '/',
+                    '/index.html',
+                    '/styles.css',
+                    '/script.js',
+                    '/assets/some-asset.png', // Add paths to all assets you want to cache
+                ];
+                
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                    );
+                });
+                
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request)
+                            .then(response => response || fetch(event.request))
+                    );
+                });const CACHE_NAME = 'water-sort-puzzle-v1';
+                const urlsToCache = [
+                    '/',
+                    '/index.html',
+                    '/styles.css',
+                    '/script.js',
+                    '/assets/some-asset.png', // Add paths to all assets you want to cache
+                ];
+                
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                    );
+                });
+                
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request)
+                            .then(response => response || fetch(event.request))
+                    );
+                });<script>
+                    if ('serviceWorker' in navigator) {
+                        window.addEventListener('load', () => {
+                            navigator.serviceWorker.register('/service-worker.js')
+                                .then(registration => {
+                                    console.log('Service Worker registered with scope:', registration.scope);
+                                })
+                                .catch(error => {
+                                    console.error('Service Worker registration failed:', error);
+                                });
+                        });
+                    }
+                </script>{
+                  "name": "Water Sort Puzzle",
+                  "short_name": "Puzzle",
+                  "start_url": "/index.html",
+                  "display": "standalone",
+                  "background_color": "#ffffff",
+                  "description": "A fun and challenging water sorting puzzle game.",
+                  "icons": [
+                    {
+                      "src": "/assets/icon-192x192.png",
+                      "sizes": "192x192",
+                      "type": "image/png"
+                    },
+                    {
+                      "src": "/assets/icon-512x512.png",
+                      "sizes": "512x512",
+                      "type": "image/png"
+                    }
+                  ]
+                }<link rel="manifest" href="/manifest.json">0</span></div>
+                <div class="timer">Time Left: <span id="timer">120</span>s</div>
+                <div class="moves">Moves: <span id="moveCount">0</span></div>
+                <div class="level">Level <span id="levelNumber">1</span></div>
+            </div>
+            <div class="title">
+                <h1>Water Sort Puzzle</h1>
+            </div>
+            <div class="menu">
+                <button id="menuButton" class="icon-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="menu-overlay" id="menuOverlay">
+            <div class="menu-content">
+                <button id="restartLevel" class="menu-button">
+                    <i class="fas fa-redo"></i> Restart Level
+                </button>
+                <button id="newGame" class="menu-button">
+                    <i class="fas fa-play"></i> New Game
+                </button>
+                <button id="soundToggle" class="menu-button">
+                    <i class="fas fa-volume-up"></i> Sound: On
+                </button>
+            </div>
+        </div>
+
+        <div class="tubes-container">
+            <!-- Tubes will be generated by JavaScript -->
+        </div>
+
+        <div class="controls">
+            <button id="undoMove" class="control-btn" disabled>
+                <i class="fas fa-undo"></i> Undo
+            </button>
+            <button id="hint" class="control-btn">
+                <i class="fas fa-lightbulb"></i> Hint
+            </button>
+            <button id="shufflePowerUp" class="control-btn">
+                <i class="fas fa-random"></i> Shuffle
+            </button>
+            <button id="skipLevelPowerUp" class="control-btn">
+                <i class="fas fa-forward"></i> Skip Level
+            </button>
+        </div>
+
+        <div class="level-complete" id="levelComplete">
+            <div class="level-complete-content">
+                <h2>Level Complete!</h2>
+                <p>Moves: <span id="finalMoves">0</span></p>
+                <button id="nextLevel" class="control-btn">
+                    <i class="fas fa-forward"></i> Next Level
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="particles-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
